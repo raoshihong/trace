@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<!-- 引用其他服务的接口 -->
+	<dubbo:reference id="eventFaced" interface="com.daoyuan.trace.service.IEventFaced" timeout="5000" check="false" />
+	<dubbo:reference id="eventUserFaced" interface="com.daoyuan.trace.service.IEventUserFaced" timeout="5000" check="false"/>
+	<dubbo:reference id="eventPlaceFaced" interface="com.daoyuan.trace.service.IEventPlaceFaced" timeout="5000" check="false"/>
+	<dubbo:reference id="eventContentFaced" interface="com.daoyuan.trace.service.IEventContentFaced" timeout="5000" check="false"/>
+	<dubbo:reference id="tracingContextListener" interface="com.daoyuan.trace.service.TracingContextListener" timeout="5000" check="false"/>
+	<dubbo:reference id="tableConfigFaced" interface="com.daoyuan.trace.service.ITableConfigFaced" timeout="5000" check="false" />
+	<dubbo:reference id="traceConfigFaced" interface="com.daoyuan.trace.service.ITraceConfigFaced" timeout="5000" check="false" />
+</beans>
